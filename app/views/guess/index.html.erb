@@ -7,6 +7,9 @@
       <input type="radio" name='board_type' value=<%= type %> <%= :checked if Board.default_board == type %>><%= type %></input>
     <% end %>
   </div>
+  <div id='guess'>
+    Where is the number <span id='number'></span>?
+  </div>
   <div id='board'>
     <%# <%= render 'table' %>
   </div>
