@@ -45,10 +45,10 @@ showBoard = (brd) ->
     $(this).addClass('pressed')
     checkResult $(cells).index($(this))
   sort = setInterval ( ->
-    startSort $(window.cells)
+    startSort()
   ), 100
   setTimeout ->
-    stopSort sort, window.cells
+    stopSort sort
   , 5000
 
 startSort = ->
