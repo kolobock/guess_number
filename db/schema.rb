@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213095127) do
+ActiveRecord::Schema.define(:version => 20130222094231) do
 
   create_table "boards", :force => true do |t|
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "type"
-    t.string   "board_nums", :limit => 15, :null => false
+    t.string   "board_nums", :limit => 38, :null => false
   end
 
-  add_index "boards", ["type", "board_nums"], :name => "index_boards_on_type_and_board_nums"
+  add_index "boards", ["type", "board_nums"], :name => "index_boards_on_type_and_board_nums", :unique => true
+  add_index "boards", ["type"], :name => "index_boards_on_type"
 
 end

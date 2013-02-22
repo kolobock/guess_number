@@ -1,0 +1,11 @@
+<table id="board" data-board-id=<%= @board.id %>>
+<% @board.each do |row| %>
+  <tr>
+    <% row.each do |col| %>
+      <td>
+        <%= col %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

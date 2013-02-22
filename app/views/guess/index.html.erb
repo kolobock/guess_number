@@ -1,2 +1,14 @@
-<h1>Guess#index</h1>
-<p>Find me in app/views/guess/index.html.erb</p>
+<h1>Guess number</h1>
+
+<div>
+  <div id='board_types'>
+    <button>New Game</button>
+    <% Board.available_boards.each do |type| %>
+      <input type="radio" name='board_type' value=<%= type %> <%= :checked if Board.default_board == type %>><%= type %></input>
+    <% end %>
+  </div>
+  <div id='board'>
+    <%# <%= render 'table' %>
+  </div>
+</div>
+

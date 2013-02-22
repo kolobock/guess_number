@@ -38,6 +38,12 @@ class Board < ActiveRecord::Base
     self[:board_nums].split(',').map(&:to_i).in_groups_of(self.class.dimension) rescue nil
   end
 
+  def check_number(opts={})
+    ind = opts.fetch :index
+    num = opts.fetch :number
+    self.board_nums.flatten[ind] == num
+  end
+
   private
 
   def init_board!

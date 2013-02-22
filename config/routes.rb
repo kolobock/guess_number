@@ -1,4 +1,8 @@
 GuessNumber::Application.routes.draw do
+  post "board/new_board"
+  post "board/:id/check", controller: :board, action: :check, id: /\d+/
+  post "board/switch"
+
   root to: 'guess#index'
 
   # The priority is based upon order of creation:
